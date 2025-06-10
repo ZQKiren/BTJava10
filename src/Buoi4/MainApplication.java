@@ -76,11 +76,11 @@ public class MainApplication {
 			System.out.println("Tong cua phep tinh la: " + ketQua);
 			break;
 		case 3:
-			ketQua = a - b;
+			ketQua = a * b;
 			System.out.println("Tong cua phep tinh la: " + ketQua);
 			break;
 		case 4:
-			ketQua = a * b;
+			ketQua = a / b;
 			System.out.println("Tong cua phep tinh la: " + ketQua);
 			break;
 		}

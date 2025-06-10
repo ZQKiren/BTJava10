@@ -14,15 +14,6 @@ public class MainApplication {
 		return -1;
 	}
 
-	public static int nhapLuaChon(Scanner scanner) {
-		int luaChon;
-		do {
-			System.out.println("Nhap lua chon cua ban (1. Keo; 2. Bua; 3. Bao; 0. Thoat): ");
-			luaChon = Integer.parseInt(scanner.nextLine());
-		} while (luaChon < 0 || luaChon > 3);
-		return luaChon;
-	}
-
 	public static void troChoiOanTuTi() {
 		int luaChonMay = 0, luaChon = 0, ban = 0, may = 0;
 		String tenLuaChon[] = { "", "Keo", "Bua", "Bao" };
