@@ -1,4 +1,4 @@
-	package Buoi7;
+	package Buoi8;
 
 import java.util.Scanner;
 
@@ -40,6 +40,22 @@ public class SinhVien {
 		this.diemHoa = diemHoa;
 	}
 	
+	public SinhVien() {
+		tenSV="";
+		maSV="";
+		diemToan=0.0;
+		diemLy=0.0;
+		diemHoa=0.0;
+	}
+	
+	public SinhVien(String tenSV, String maSV, double diemToan, double diemLy, double diemHoa) {
+		this.tenSV = tenSV;
+		this.maSV = maSV;
+		this.diemToan = diemToan;
+		this.diemLy = diemLy;
+		this.diemHoa = diemHoa;
+	}
+	
 	public void nhapThongTin() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập mã SV: ");
@@ -55,9 +71,12 @@ public class SinhVien {
 	}
 	
 	public void xuatThongTin() {
-		System.out.println("Mã sinh viên: " + maSV + "\t" + "Tên sinh viên: " + tenSV);
-		System.out.println("Điểm toán: " + diemToan + "\t" + "Điểm lý: " + diemLy + "\t" + "Điểm hóa: " + diemHoa);
+		System.out.printf("Mã SV: %-8s | Tên SV: %-20s\n", maSV, tenSV);
+		System.out.printf("Toán: %-4.1f | Lý: %-4.1f | Hóa: %-4.1f | ĐTB: %-4.1f | Xếp loại: %-10s\n",
+			diemToan, diemLy, diemHoa, diemTrungBinh(), xepLoai());
+		System.out.println("------------------------------------------------------------");
 	}
+
 	
 	public double diemTrungBinh() {
 		double diemTB = 0;
@@ -80,4 +99,6 @@ public class SinhVien {
 			xepLoai = "Yếu";
 		return xepLoai;
 	}
+	
+	
 }
