@@ -129,13 +129,16 @@ public class QLSV {
 		List<SinhVien> listTheoMa = new ArrayList<SinhVien>();
 		
 		listSV.forEach(item -> {
-			if(item.getMaSV().toLowerCase().contains(maSV))
+			if(item.getMaSV().equalsIgnoreCase(maSV))
 				listTheoMa.add(item);
 		});
 		
-		listTheoMa.forEach(item ->{
-			item.xuatThongTin();
-		});
+		if (listTheoMa.isEmpty()) {
+			System.out.println("Không tìm thấy sinh viên nào có mã: " + maSV);
+		} else {
+			System.out.println("=== Kết quả tìm kiếm ===");
+			listTheoMa.forEach(SinhVien::xuatThongTin);
+		}
 	}
 	
 	public void xoaTheoMa() {
@@ -157,7 +160,7 @@ public class QLSV {
 		}
 	}
 	
-	public void hienThiMenu() {
+	public void giaoDienMenu() {
         System.out.println("1. Tạo dữ liệu giả");
         System.out.println("2. Nhập sinh viên mới");
         System.out.println("3. In danh sách tất cả sinh viên");
@@ -174,7 +177,7 @@ public class QLSV {
         int luaChon;
         
         do {
-            hienThiMenu();
+        	giaoDienMenu();
             luaChon = scanner.nextInt();
             scanner.nextLine();
             
